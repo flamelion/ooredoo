@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="938.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ghg.index.MainFrame_Controller">
+   <center>
+      <VBox prefHeight="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" prefHeight="150.0" text="Filter Objects">
+              <content>
+                  <ScrollPane fx:id="filterscroll" fitToWidth="true">
+                     <content>
+                        <VBox fx:id="filtervbox" />
+                     </content>
+                  </ScrollPane>
+              </content>
+               <graphic>
+                  <Button fx:id="filter_flash" mnemonicParsing="false" onAction="#filter_flash_action" text="Refresh" />
+               </graphic>
+            </TitledPane>
+            <TitledPane animated="false" text="Employment Info">
+              <content>
+                <AnchorPane fx:id="emptablepane" prefHeight="500.0" style="-fx-background-color: yellow;" />
+              </content>
+               <graphic>
+                  <Button fx:id="new_emplyee" mnemonicParsing="false" onAction="#new_emplyee_action" text="New" />
+               </graphic>
+            </TitledPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <AnchorPane prefHeight="50.0" style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="17.0" prefHeight="17.0" prefWidth="70.0" text="Filter Type" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="12.0" />
+            <MenuButton layoutX="75.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="333.0" text="Choose Filter">
+               <items>
+                  <Menu mnemonicParsing="false" text="Personal Info">
+                     <items>
+                        <MenuItem fx:id="mnu_formdate" mnemonicParsing="false" onAction="#mnu_formdate_action" text="Form Date" />
+                        <MenuItem fx:id="mnu_formno" mnemonicParsing="false" onAction="#mnu_formno_action" text="Form No" />
+                        <MenuItem fx:id="mnu_name" mnemonicParsing="false" onAction="#mnu_name_action" text="Name" />
+                        <MenuItem fx:id="mnu_age" mnemonicParsing="false" onAction="#mnu_age_action" text="Age" />
+                        <MenuItem fx:id="mnu_gender" mnemonicParsing="false" onAction="#mnu_gender_action" text="Gender" />
+                        <MenuItem fx:id="mnu_applypost" mnemonicParsing="false" onAction="#mnu_applypost_action" text="ApplyPost" />
+                        <MenuItem fx:id="mnu_nrc" mnemonicParsing="false" onAction="#mnu_nrc_action" text="NRC" />
+                        <MenuItem fx:id="mnu_ph" mnemonicParsing="false" onAction="#mnu_ph_action" text="Phone Number" />
+                        <MenuItem fx:id="mnu_address" mnemonicParsing="false" onAction="#mnu_address_action" text="Address" />
+                        <MenuItem fx:id="mnu_status" mnemonicParsing="false" onAction="#mnu_status_action" text="Status" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Experience">
+                     <items>
+                        <MenuItem fx:id="mnu_comname" mnemonicParsing="false" onAction="#mnu_comname_action" text="Company Name" />
+                        <MenuItem fx:id="mnu_company_type" mnemonicParsing="false" onAction="#mnu_company_type_action" text="Company Type" />
+                        <MenuItem fx:id="mnu_company_position" mnemonicParsing="false" onAction="#mnu_company_position_action" text="Position" />
+                        <MenuItem fx:id="mnu_expyear" mnemonicParsing="false" onAction="#mnu_expyear_action" text="Experience Year of the Post" />
+                        <MenuItem fx:id="mnu_workingexp" mnemonicParsing="false" onAction="#mnu_workingexp_action" text="Working Experiences" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Eduction">
+                     <items>
+                        <MenuItem fx:id="mnu_degree" mnemonicParsing="false" onAction="#mnu_degree_action" text="Degree" />
+                        <MenuItem fx:id="mnu_institude" mnemonicParsing="false" onAction="#mnu_nstitude_action" text="institution" />
+                        <MenuItem fx:id="mnu_deploma" mnemonicParsing="false" onAction="#mnu_deploma_action" text="Deploma" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Skill">
+                     <items>
+                        <MenuItem fx:id="mnu_field" mnemonicParsing="false" onAction="#mnu_field_action" text="Field" />
+                        <MenuItem fx:id="mnu_certificate" mnemonicParsing="false" onAction="#mnu_certificate_action" text="Cetificate" />
+                        <MenuItem fx:id="mnu_language" mnemonicParsing="false" onAction="#mnu_language_action" text="Language" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Family History">
+                     <items>
+                        <MenuItem fx:id="mnu_fathername" mnemonicParsing="false" onAction="#mnu_fathername_action" text="Father Name" />
+                        <MenuItem fx:id="mnu_fatherjob" mnemonicParsing="false" onAction="#mnu_fatherjob_action" text="Father Job" />
+                        <MenuItem fx:id="mnu_mothername" mnemonicParsing="false" onAction="#mnu_mothername_action" text="Mother Name" />
+                        <MenuItem fx:id="mnu_motherjob" mnemonicParsing="false" onAction="#mnu_fmotherjob_action" text="Mother Job" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Concern Work Fact">
+                     <items>
+                        <MenuItem fx:id="mnu_havemotorbike" mnemonicParsing="false" onAction="#mnu_mnu_havemotorbike_action" text="Have MotorBike" />
+                        <MenuItem fx:id="mnu_travelornot" mnemonicParsing="false" onAction="#mnu_travelornot_action" text="Travel or Not" />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Interesting">
+                     <items>
+                        <MenuItem fx:id="mnu_Interesting" mnemonicParsing="false" onAction="#mnu_Interesting_action" text="Intersting" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Activities">
+                     <items>
+                        <MenuItem fx:id="mnu_activities" mnemonicParsing="false" onAction="#mnu_activities_action" text="activities" />
+                        <MenuItem fx:id="mnu_actas" mnemonicParsing="false" onAction="#mnu_atctas_action" text="act as" />
+                     </items>
+                  </Menu>
+               </items>
+            </MenuButton>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <TitledPane animated="false" prefHeight="90.0" text="Table Column" BorderPane.alignment="CENTER">
+        <content>
+            <ScrollPane fitToWidth="true">
+               <content>
+                  <VBox>
+                     <children>
+                        <HBox style="-fx-background-color: white;">
+                           <children>
+                              <CheckBox fx:id="cbregdate" mnemonicParsing="false" text="Form Date">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbformno" mnemonicParsing="false" text="FormNo">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbname" mnemonicParsing="false" text="Name">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbexpecetedsalary" mnemonicParsing="false" text="Expected Salary">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbjointat" mnemonicParsing="false" text="Joint At" wrapText="true">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbapplypost" mnemonicParsing="false" text="ApplyPost">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox style="-fx-background-color: lightblue;">
+                           <children>
+                              <CheckBox fx:id="cbage" mnemonicParsing="false" text="Age">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbplaceofbirth" mnemonicParsing="false" text="Place of Birth">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbgender" mnemonicParsing="false" text="Gender">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbmaterialstatus" mnemonicParsing="false" text="Material Status">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbnationality" mnemonicParsing="false" text="Nationality">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbreligion" mnemonicParsing="false" text="Religion">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbnrc" mnemonicParsing="false" text="NRC">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbdrivinglic" mnemonicParsing="false" text="Driving Lic">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox style="-fx-background-color: white;">
+                           <children>
+                              <CheckBox fx:id="cbcurrentaddress" mnemonicParsing="false" text="Current Address">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbpermanentaddress" mnemonicParsing="false" text="Permanent Address">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbphonenumber" mnemonicParsing="false" text="Phone Number">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox style="-fx-background-color: lightblue;">
+                           <children>
+                              <CheckBox fx:id="cbdegree" mnemonicParsing="false" text="Degree">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbDeploma" mnemonicParsing="false" text="Deploma">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbattending_class" mnemonicParsing="false" text="Attending_class">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbexperience" mnemonicParsing="false" text="Experience">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="ccbskill" mnemonicParsing="false" text="Skill">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cblangauge" mnemonicParsing="false" text="Language">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbinteresting" mnemonicParsing="false" text="Interesting">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbActivities" mnemonicParsing="false" text="Activities">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox style="-fx-background-color: white;">
+                           <children>
+                              <CheckBox fx:id="cbfathername" mnemonicParsing="false" text="Father Name">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbFatherJob" mnemonicParsing="false" text="Father Job">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbbmotherName" mnemonicParsing="false" text="Mother Name">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbmotherjob" mnemonicParsing="false" text="Mother Job">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox style="-fx-background-color: lightblue;">
+                           <children>
+                              <CheckBox fx:id="cbovetime" mnemonicParsing="false" text="OverTime">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbworkuntil" mnemonicParsing="false" text="Work Until">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbtravelornot" mnemonicParsing="false" text="Travel or Not">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbworkcities" mnemonicParsing="false" text="Work @ Cities">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbworkcitiesare" mnemonicParsing="false" text="Working Cities">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbbond" mnemonicParsing="false" text="Bond">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbbondyear" mnemonicParsing="false" text="Bond Year">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbmotorbike" mnemonicParsing="false" text="Motor bike">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                        <HBox style="-fx-background-color: white;">
+                           <children>
+                              <CheckBox fx:id="cbattachment" mnemonicParsing="false" text="Attachment">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                              <CheckBox fx:id="cbstatus" mnemonicParsing="false" text="Status">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+        </content>
+         <graphic>
+            <Button fx:id="columnchange" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#columnchangedActtion" text="Change" textAlignment="RIGHT" />
+         </graphic>
+      </TitledPane>
+   </bottom>
+</BorderPane>
